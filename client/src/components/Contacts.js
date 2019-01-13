@@ -1,22 +1,28 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getContacts } from '../actions/contacts'
-
+import { getContacts, sendStatus } from '../actions/contacts'
+import { getGoing } from '../actions/going';
+import { getNotgoing } from '../actions/notgoing';
 
 
 
 class Contacts extends Component {
-  state ={
-    contacts: []
-  }
+
   componentDidMount() {
     getContacts()
-    console.log(this.props)
-    console.log(this.state)
-
-
+    getGoing()
+    getNotgoing()
+    console.log("Component:", this.props.contacts)
   }
   
+  going = (e) => {
+    sendStatus(this.props.person.id, 'going') 
+   } 
+  
+    notGoing = (e) => {
+     sendStatus(this.props.person.id, 'not going')
+    }
+
   render() {
     return (
       <div>
@@ -27,10 +33,12 @@ class Contacts extends Component {
   }
 }
 
-function mapStateToProps(initialState) {
+function mapStateToProps(appState) {
   return {
     
-    contacts: initialState.contactsReducer.contacts
+    contacts: appState.contactsReducer.contacts,
+    going: appState.contactsReducer.going,
+    notgoing: appState.contactsReducer.notgoing
   }
 }
 

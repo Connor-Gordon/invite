@@ -5,7 +5,7 @@ axios.defaults.baseURL = '/api'
 
 export function getGoing() {
   axios.get('/Going').then(resp => {
-    console.log(resp)
+    console.log("Going response:", resp)
     store.dispatch({
       type: 'GET_GOING', 
       going: resp.data.going

@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import store from '../store'
 
 import Contacts from './Contacts'
+import Going from './Going'
+import Notgoing from './Notgoing'
 
 class App extends Component {
   render() {
@@ -15,7 +17,8 @@ class App extends Component {
         <Router>
           <div>
             <Route path="/" exact component={Contacts} />
-
+            <Route path="/going" component={Going}/>
+            <Route path="/notgoing" component={Notgoing} />
           </div>
         </Router>
       </Provider>

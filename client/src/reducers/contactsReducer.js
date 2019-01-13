@@ -5,7 +5,9 @@
 
 // create and initial state with an empty array called contacts
 const initialState = {
-  contacts: []
+  contacts: {},
+  going: [],
+  notgoing: []
 }
 
 // export a function that sets state = to initialState and takes in an action 
@@ -16,6 +18,10 @@ export default function (state = initialState, action) {
     // add actions here
     case 'GET_CONTACTS':
       return {...state, contacts: action.contacts}
+    case 'GET_GOING':
+     return {...state, going: action.going}
+    case 'GET_NOTGOING':
+      return {...state, notgoing: action.notgoing}
     default:
       return state
   }
