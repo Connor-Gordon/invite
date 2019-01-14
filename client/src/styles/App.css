@@ -1,0 +1,32 @@
+* {
+box-sizing: border-box;
+}
+
+.arrayLinks {
+    width: 250px;
+    margin: auto;
+    color: black;
+}
+
+.homeContainer {
+    border: 1px solid lightgray;
+    width: 250px;
+    margin: auto;
+    padding: 5px;
+}
+
+.contactInfo {
+    list-style: none;
+
+}
+
+.image {
+    border-radius: 100%;
+    align-content: center;
+}
+
+
+.box {
+display: flex;
+border: 1px solid lightgray;
+}
