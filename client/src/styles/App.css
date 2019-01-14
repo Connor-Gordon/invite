@@ -25,7 +25,6 @@ box-sizing: border-box;
     align-content: center;
 }
 
-
 .box {
 display: flex;
 border: 1px solid lightgray;
